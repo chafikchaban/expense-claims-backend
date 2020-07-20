@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var Expense = require('./Expense.model')
 
-var db = `${process.env.MONGODB_URI}/heroku_z131qg71` || 'mongodb://localhost:27017/example';
+var db = process.env.MONGODB_URI || 'mongodb://localhost:27017/example';
 
 mongoose.connect(db, {
     useUnifiedTopology: true,
