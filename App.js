@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
+const cors = require('cors');
 var mongoose = require('mongoose');
 var Expense = require('./Expense.model')
 
@@ -20,6 +21,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+app.use(cors())
 var PORT = process.env.PORT || 8080;
 
 const names = ["Chafik", "John", "Selena", "Patrick", "Yasmine"];
